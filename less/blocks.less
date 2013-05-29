@@ -1,0 +1,50 @@
+.block {
+  .well;
+  padding: 2px 0;
+  .border-radius(@borderRadiusAsymetric);
+  border: 2px solid @standardgreen;
+  .header {
+    .border-radius(@borderRadiusAsymetric);
+    .title {
+      h2 {
+        background: @standardgreen url([[pix:theme|star-mini]]) no-repeat right bottom;
+        .border-radius(@borderRadiusAsymetric);
+        margin: -3px 0 0 -1px;
+        max-width: 80%;
+        color: @white;   
+      }
+      .commands {
+        background: transparent url([[pix:theme|corner-left-top]]) no-repeat left top;
+      }  
+    }
+  }
+  .content {
+    background: transparent url([[pix:theme|corner-left-top]]) no-repeat left top;
+  }
+  .content .block_tree.list li.depth_1 p.active_tree_node a {
+    background: darken(@grayLighter, 8);
+  }
+  .content .block_tree.list li.depth_1 li p.active_tree_node a {
+    background-image: none;
+  }
+  
+}
+
+.block_course_overview .content {
+  margin: 0;
+}
+
+.editing .block .content, .editing .content .block_tree.list li.depth_1 p.active_tree_node a {
+  background-image: none;
+}
+
+.block .block_tree li > p > span:hover,
+.block .block_tree li > p > a:hover {
+  background-color: darken(@grayLighter, 10);
+}
+
+.block_tree li p.active_tree_node a,
+.block_tree li p.active_tree_node a:hover {
+  color: @grayDark;
+  background-color: darken(@grayLighter, 8);
+}

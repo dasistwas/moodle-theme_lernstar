@@ -1,0 +1,67 @@
+@import "../../bootstrapbase/less/moodle";
+@import "variables";
+@import "blocks";
+@import "custommenu";
+
+body {
+  padding: 10px 15px;
+}
+
+.asymetric-page {
+  .border-radius(@borderRadiusAsymLarge);
+}
+
+#page {
+  background-color: @grayLighter;
+  .asymetric-page;
+  border: 2px solid @grayLight;
+  padding: 5px;
+}
+
+.container-design {
+  padding: 5px;
+  background-color: @grayLighter;
+  .asymetric-page;
+  .box-shadow(0 0 10px 5px #333);
+}
+
+#page-content {
+  .border-radius(@borderRadiusLarge);
+  background-color: @white;
+  border: 1px solid @grayLight;
+  width: auto;
+  padding: 10px;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  margin: 0;
+}
+
+body#tinymce {
+  background-color: @white;
+}
+
+header {
+  min-height: 110px;
+}
+header h1 {
+  color: @standardgreen;
+  display: inline;
+  float: left;
+  font-size: 135%;
+  font-style: italic;
+  line-height: normal;
+  margin: -20px 0 0 148px;
+  padding: 0;
+  text-align: left;
+  text-indent: 0;
+}
+.no-header {
+  height: 40px;
+}
+
+.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+  margin-left: 1%;
+  margin-right: 1%;
+}
