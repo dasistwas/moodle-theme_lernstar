@@ -32,10 +32,7 @@ a.logo {
 .navbar-text {
 	line-height: 20px;
 }
-.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
-    color: rgb(85, 85, 85);
-    background-color: rgb(245, 245, 245);
-}
+
 
 /* Custom CSS Settings
 -------------------------*/
