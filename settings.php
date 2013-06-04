@@ -46,6 +46,15 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+    
+    // Footnote setting.
+    $name = 'theme_lernstar/footnote';
+    $title = get_string('footnote', 'theme_lernstar');
+    $description = get_string('footnotedesc', 'theme_lernstar');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
 
     // Custom CSS file.
     $name = 'theme_lernstar/customcss';

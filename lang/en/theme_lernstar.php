@@ -53,6 +53,9 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
 
+$string['footer'] = 'Footer text and links';
+$string['footerdesc'] = 'Put here your footer text and links like this: first text, http://firstlink.com; second text, http://secondlink.com;';
+
 $string['invert'] = 'Invert navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 
