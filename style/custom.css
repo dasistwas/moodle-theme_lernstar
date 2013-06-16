@@ -12,7 +12,7 @@ div.logo {
 
 a.logo {
 	display: block;
-	width: 394px;
+	max-width: 394px;
 	height: 90px;
 }
 
