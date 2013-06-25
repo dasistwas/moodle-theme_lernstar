@@ -57,7 +57,7 @@ $THEME->plugins_exclude_sheets = array(
 
 $THEME->layouts = array(
 		//to create side pre or side post layout remove one or the other from all below
-		'general' => array(
+		'standard' => array(
 				'file' => 'general.php',
 				'regions' => array('side-pre'),
 		),
