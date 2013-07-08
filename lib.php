@@ -29,24 +29,26 @@
  */
 require("lessc.inc.php");
 
-function lernstar_process_css($css, $theme) {
+function theme_lernstar_process_css($css, $theme) {
 	
-	$css .= lernstar_get_lesscss($theme);
+	//outcomment the following line (and also a line at the end of this function) to enable live less to css generation (delete the content of /style/styles.css as well)
+	//$css .= theme_lernstar_get_lesscss($theme);
 	// Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
-    $css = lernstar_set_logo($css, $logo);
+    $css = theme_lernstar_set_logo($css, $logo);
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
     } else {
         $customcss = null;
     }
-    $css = lernstar_set_customcss($css, $customcss);
-    $css = lernstar_insert_imageurls($css);
+    $css = theme_lernstar_set_customcss($css, $customcss);
+    //outcomment the following line to enable live less to css generation
+    //$css = theme_lernstar_insert_imageurls($css);
     return $css;
 }
 
-function lernstar_get_lesscss ($theme){
+function theme_lernstar_get_lesscss ($theme){
 	$less_input = '@import "main";';
 	$less_variables = array();
 	$import_dirs[] = $theme->dir.'/less';
@@ -60,7 +62,7 @@ function lernstar_get_lesscss ($theme){
 	return $css;
 }
 
-function lernstar_callback_imageurls($matches){
+function theme_lernstar_callback_imageurls($matches){
 	global $OUTPUT;
 	if(empty($matches[3])){
 		$replace = $OUTPUT->pix_url($matches[2],$matches[1]);
@@ -70,22 +72,20 @@ function lernstar_callback_imageurls($matches){
 	return $replace;
 }
 
-function lernstar_insert_imageurls($css){
+function theme_lernstar_insert_imageurls($css){
 	$pattern = '/\[\[pix:(\w+)\|(.+)\]\]|\[\[pix:(\w+\/.+)\]\]/i';
-	$newcss = preg_replace_callback($pattern, "lernstar_callback_imageurls", $css);
+	$newcss = preg_replace_callback($pattern, "theme_lernstar_callback_imageurls", $css);
 	return $newcss;
 }
 
-function lernstar_set_logo($css, $logo) {
-    global $OUTPUT;
+function theme_lernstar_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (is_null($replacement)) {
-        $replacement = '';
+        $replacement = '[[pix:theme|header]]';
     }
-
     $css = str_replace($tag, $replacement, $css);
-
+    $css = theme_lernstar_insert_imageurls($css);
     return $css;
 }
 
@@ -98,7 +98,7 @@ function theme_lernstar_pluginfile($course, $cm, $context, $filearea, $args, $fo
     }
 }
 
-function lernstar_set_customcss($css, $customcss) {
+function theme_lernstar_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (is_null($replacement)) {
@@ -106,6 +106,43 @@ function lernstar_set_customcss($css, $customcss) {
     }
 
     $css = str_replace($tag, $replacement, $css);
-
     return $css;
+}
+/**
+ * Returns an object containing HTML for the areas affected by settings.
+ *
+ * @param renderer_base $output Pass in $OUTPUT.
+ * @param moodle_page $page Pass in $PAGE.
+ * @return stdClass An object with the following properties:
+ *      - navbarclass A CSS class to use on the navbar. By default ''.
+ *      - heading HTML to use for the heading. A logo if one is selected or the default heading.
+ *      - footnote HTML to use as a footnote. By default ''.
+ */
+function theme_lernstar_get_html_for_settings(renderer_base $output, moodle_page $page) {
+	global $CFG;
+	$return = new stdClass;
+
+	$return->navbarclass = '';
+	if (!empty($page->theme->settings->invert)) {
+		$return->navbarclass .= ' navbar-inverse';
+	}
+
+	if (!empty($page->theme->settings->logo)) {
+		$return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));
+	} else {
+		$return->heading = $output->page_heading();
+	}
+
+	$return->footnote = '';
+	if (!empty($page->theme->settings->footnote)) {
+		$return->footnote = '<div class="footnote text-center">'.$page->theme->settings->footnote.'</div>';
+	}
+	return $return;
+}
+
+function theme_lernstar_copyright() {
+		// Copyright information for the theme. If removed here, place the Copyright notice as somewhere on your site.
+		$copyright = html_writer::tag('a', "Lernstar Online-Nachhilfe", array('href'=>'http://www.lernstar.com'));
+		$content = html_writer::tag('div','Theme by '.$copyright,array('class'=>'copyright'));
+		return $content;
 }

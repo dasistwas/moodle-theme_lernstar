@@ -33,10 +33,16 @@ body {
   width: auto;
   padding: 10px;
 }
+#page-footer {
+  text-align: left;
+  margin-top: 0;
+  padding-top: 5px;
+}
 
 .breadcrumb {
   background-color: transparent;
   margin: 0;
+  padding: 4px 15px;
 }
 
 body#tinymce {
@@ -44,19 +50,22 @@ body#tinymce {
 }
 
 header {
-  min-height: 110px;
+  min-height: 100px;
 }
 header h1 {
   color: @standardgreen;
   display: inline;
   float: left;
-  font-size: 135%;
+  font-size: 125%;
   font-style: italic;
   line-height: normal;
-  margin: -20px 0 0 148px;
+  margin: -20px 0 0 88px;
   padding: 0;
   text-align: left;
   text-indent: 0;
+}
+.www-lernstar-com header h1 {
+  margin: -20px 0 0 148px;
 }
 .no-header {
   height: 40px;
@@ -91,4 +100,22 @@ blockquote {
 .breadcrumb-button {
   max-height: 40px;
   margin: 0;
+}
+.navbar-text {
+	line-height: 20px;
+	text-align: right;
+}
+.copyright {
+    float: right;
+    border: none;
+}
+footer div {
+  display: inline;
+  margin-right: 5px;
+  padding-right: 5px;
+  border-right: 2px solid @grayLight;
+  font-size: 10px;
+}
+footer div.footnote {
+  border: none;
 }

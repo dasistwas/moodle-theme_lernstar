@@ -53,12 +53,6 @@ if ($PAGE->user_is_editing()) {
 $haslogo = (!empty($PAGE->theme->settings->logo));
 
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$navbar_inverse = '';
-if (!empty($PAGE->theme->settings->invert)) {
-    $navbar_inverse = 'navbar-inverse';
-}
-$custommenu = $OUTPUT->custom_menu();
-$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
 $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
 
@@ -119,10 +113,7 @@ echo $OUTPUT->doctype() ?>
     <nav role="navigation" class="">
         <div class="container-fluid">
             <div class="nav-collapse collapse">
-            <?php if ($hascustommenu) {
-                echo $custommenu;
-            } ?>
-
+            <?php echo $OUTPUT->custom_menu(); ?>
             </div>
         </div>
     </nav>
