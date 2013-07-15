@@ -46,7 +46,8 @@ echo $OUTPUT->doctype() ?>
 					<div>
 						<ul class="nav">
 							<li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-							<li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+							<li class="navbar-text clearfix"><?php echo $OUTPUT->theme_lernstar_socialicons(); ?></li>
+							<li class="navbar-text"><?php echo $OUTPUT->login_info(); ?></li>
 							<li>
 								<nav role="navigation">
 									<div class="nav-collapse collapse">

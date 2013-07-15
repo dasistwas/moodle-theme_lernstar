@@ -86,4 +86,28 @@ if ($ADMIN->fulltree) {
     $description = get_string('devmodedesc', 'theme_lernstar');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0, true, false);
     $settings->add($setting);
+    
+    $name = 'theme_lernstar/youtubelink'; 
+    $title = get_string('youtubelink','theme_lernstar');   
+    $description = get_string('youtubelinkdesc', 'theme_lernstar');   
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_TEXT);  
+    $settings->add($setting);
+    
+    $name = 'theme_lernstar/googlepluslink';   
+    $title = get_string('googlepluslink','theme_lernstar');    
+    $description = get_string('googlepluslinkdesc', 'theme_lernstar');    
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_TEXT);
+    $settings->add($setting);
+    
+    $name = 'theme_lernstar/facebooklink';
+    $title = get_string('facebooklink','theme_lernstar');
+    $description = get_string('facebooklinkdesc', 'theme_lernstar');
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_TEXT);
+    $settings->add($setting);
+    
+    $name = 'theme_lernstar/twitterlink';
+    $title = get_string('twitterlink','theme_lernstar');   
+    $description = get_string('twitterlinkdesc', 'theme_lernstar');   
+    $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_TEXT);    
+    $settings->add($setting);
 }

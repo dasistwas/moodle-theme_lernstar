@@ -75,3 +75,15 @@ $string['devmodedesc'] = 'This enables the generation of CSS on the fly, when yo
 $string['flavour'] = 'Choose a color for the theme';
 $string['flavourdesc'] = 'Main color flavour for the theme. Call /admin/purgecaches.php after changing the color.';
 
+$string['youtubelink'] = 'Link to your YouTube channel (optional)';
+$string['youtubelinkdesc'] = 'The link should look like this: http://www.youtube.com/yourchannel';
+
+$string['twitterlink'] = 'Link to your twitter account (optional)';
+$string['twitterlinkdesc'] = 'The link should look like this: https://www.twitter.com/youraccount';
+
+$string['facebooklink'] = 'Link to your facebook page (optional)';
+$string['facebooklinkdesc'] = 'The link should look like this: http://www.facebook.com/yourpage';
+
+$string['googlepluslink'] = 'Link to your google+ page (optional)';
+$string['googlepluslinkdesc'] = 'The link should look like this: https://plus.google.com/+youracount/posts';
+
