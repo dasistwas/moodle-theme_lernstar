@@ -71,4 +71,19 @@ if ($ADMIN->fulltree) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $settings->add($setting);
+    
+    // Choose your color
+    $name = 'theme_lernstar/flavour';
+    $title = get_string('flavour', 'theme_lernstar');
+    $description = get_string('flavourdesc', 'theme_lernstar');
+    $choices = array('green'=>'green','blue'=>'blue');
+    $setting = new admin_setting_configselect($name, $title, $description, 'green', $choices);
+    $settings->add($setting);
+    
+    // Enable Developer Mode
+    $name = 'theme_lernstar/devmode';
+    $title = get_string('devmode', 'theme_lernstar');
+    $description = get_string('devmodedesc', 'theme_lernstar');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0, true, false);
+    $settings->add($setting);
 }
