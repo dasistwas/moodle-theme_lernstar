@@ -79,13 +79,13 @@ function theme_lernstar_insert_imageurls($css){
 }
 
 function theme_lernstar_set_logo($css, $logo) {
+	global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (is_null($replacement)) {
-        $replacement = '[[pix:theme|header]]';
+        $replacement = $OUTPUT->pix_url('header','theme');
     }
     $css = str_replace($tag, $replacement, $css);
-    $css = theme_lernstar_insert_imageurls($css);
     return $css;
 }
 
