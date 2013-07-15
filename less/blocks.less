@@ -2,24 +2,24 @@
   .well;
   padding: 2px 0;
   .border-radius(@borderRadiusAsymetric);
-  border: 2px solid @standardgreen;
+  border: 2px solid @flavour;
   .header {
     .border-radius(@borderRadiusAsymetric);
     .title {
       h2 {
-        background: @standardgreen url([[pix:theme|star-mini]]) no-repeat right bottom;
+        background: @flavour url([[pix:theme|star-mini]]) no-repeat right bottom;
         .border-radius(@borderRadiusAsymetric);
         margin: -3px 0 0 -1px;
         max-width: 80%;
         color: @white;   
       }
       .commands {
-        background: transparent url([[pix:theme|corner-left-top]]) no-repeat left top;
+        background: transparent url(@cornerimage) no-repeat left top;
       }  
     }
   }
   .content {
-    background: transparent url([[pix:theme|corner-left-top]]) no-repeat left top;
+    background: transparent url(@cornerimage) no-repeat left top;
   }
   .content .block_tree.list li.depth_1 p.active_tree_node a {
     background: darken(@grayLighter, 8);

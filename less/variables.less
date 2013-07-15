@@ -5,7 +5,8 @@
 
 // Global values
 // --------------------------------------------------
-
+//flavour name and image directory name
+@cornerimage: "[[pix:theme|corner-left-top]]";
 
 // Grays
 // -------------------------
@@ -23,12 +24,12 @@
 @blue:                  #049cdb;
 @blueDark:              #0064cd;
 @green:                 rgb(100, 191, 44);
-@standardgreen:			#7FCD4E;
 @red:                   #9d261d;
 @yellow:                #ffc40d;
 @orange:                #f89406;
 @pink:                  #c3325f;
 @purple:                #7a43b6;
+@flavour:				#7FCD4E;
 
 
 // Scaffolding
@@ -91,7 +92,7 @@
 @btnBackgroundHighlight:            darken(@white, 10%);
 @btnBorder:                         #ccc;
 
-@btnPrimaryBackground:              @standardgreen;
+@btnPrimaryBackground:              @flavour;
 @btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
 
 @btnInfoBackground:                 #5bc0de;

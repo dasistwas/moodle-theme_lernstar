@@ -31,8 +31,9 @@ require("lessc.inc.php");
 
 function theme_lernstar_process_css($css, $theme) {
 	
-	//outcomment the following line (and also a line at the end of this function) to enable live less to css generation (delete the content of /style/styles.css as well)
-	//$css .= theme_lernstar_get_lesscss($theme);
+	if($theme->settings->devmode){
+		$css .= theme_lernstar_get_lesscss($theme);
+	}
 	// Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = theme_lernstar_set_logo($css, $logo);
@@ -43,8 +44,9 @@ function theme_lernstar_process_css($css, $theme) {
         $customcss = null;
     }
     $css = theme_lernstar_set_customcss($css, $customcss);
-    //outcomment the following line to enable live less to css generation
-    //$css = theme_lernstar_insert_imageurls($css);
+	if($theme->settings->devmode){
+        $css = theme_lernstar_insert_imageurls($css);
+	}
     return $css;
 }
 

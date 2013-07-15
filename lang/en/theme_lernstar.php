@@ -69,3 +69,9 @@ $string['pluginname'] = 'Lernstar';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 
+$string['devmode'] = 'Check only if you are a theme developer';
+$string['devmodedesc'] = 'This enables the generation of CSS on the fly, when you change the LESS files. Make sure the style/styles.css file is writeable by your webserver (chmod 777), otherwise changes will be lost after turning off developer mode. Enabling this setting could lead to decrease of performance.';
+
+$string['flavour'] = 'Choose a color for the theme';
+$string['flavourdesc'] = 'Main color flavour for the theme. Call /admin/purgecaches.php after changing the color.';
+
