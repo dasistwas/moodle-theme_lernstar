@@ -132,9 +132,6 @@ function theme_lernstar_get_html_for_settings(renderer_base $output, moodle_page
 	$return = new stdClass;
 
 	$return->navbarclass = '';
-	if (!empty($page->theme->settings->invert)) {
-		$return->navbarclass .= ' navbar-inverse';
-	}
 
 	if (!empty($page->theme->settings->logo)) {
 		$return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));

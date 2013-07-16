@@ -18,7 +18,7 @@
  * Strings for component 'theme_lernstar', language 'en'
  *
  * @package   theme_lernstar
- * @copyright 2013 Bas Brands, www.basbrands.nl
+ * @copyright 2013 David Bogner
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,13 +31,6 @@ $string['choosereadme'] = '
 <div class="well">
 <h3>About</h3>
 <p>Lernstar is a modified Moodle bootstrap theme which inherits styles and renderers from its parent theme.</p>
-<h3>Parents</h3>
-<p>This theme is based upon the Bootstrap theme, which was created for Moodle 2.5, with the help of:<br>
-Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
-<h3>Theme Credits</h3>
-<p>Authors: Bas Brands, David Scotson, Mary Evans<br>
-Contact: bas@sonsbeekmedia.nl<br>
-Website: <a href="http://www.basbrands.nl">www.basbrands.nl</a>
 </p>
 <h3>Report a bug:</h3>
 <p><a href="http://tracker.moodle.org">http://tracker.moodle.org</a></p>
@@ -69,11 +62,15 @@ $string['pluginname'] = 'Lernstar';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 
-$string['devmode'] = 'Check only if you are a theme developer';
-$string['devmodedesc'] = 'This enables the generation of CSS on the fly, when you change the LESS files. Make sure the style/styles.css file is writeable by your webserver (chmod 777), otherwise changes will be lost after turning off developer mode. Enabling this setting could lead to decrease of performance.';
+$string['devmode'] = 'Keep checked';
+$string['devmodedesc'] = 'This enables the use of flavours.
+		If you uncheck this, you have to rewrite the line starting with $THEME->sheets config.php like that:
+		$THEME->sheets = array("styles","custom");
+		Make sure the style/styles.css file is writeable by your webserver (chmod 777) 
+		before doing that. Otherwise changes will be lost after disabling this option.';
 
-$string['flavour'] = 'Choose a color for the theme';
-$string['flavourdesc'] = 'Main color flavour for the theme. Call /admin/purgecaches.php after changing the color.';
+$string['flavour'] = 'Choose a flavour for the theme';
+$string['flavourdesc'] = 'Main color flavour for the theme. Purge the caches at /admin/purgecaches.php after changing the color in order to see the new color.';
 
 $string['youtubelink'] = 'Link to your YouTube channel (optional)';
 $string['youtubelinkdesc'] = 'The link should look like this: http://www.youtube.com/yourchannel';

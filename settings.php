@@ -32,13 +32,6 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
 
-    // Invert Navbar to dark background.
-    $name = 'theme_lernstar/invert';
-    $title = get_string('invert', 'theme_lernstar');
-    $description = get_string('invertdesc', 'theme_lernstar');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $settings->add($setting);
-
     // Logo file setting.
     $name = 'theme_lernstar/logo';
     $title = get_string('logo','theme_lernstar');
@@ -71,20 +64,20 @@ if ($ADMIN->fulltree) {
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $settings->add($setting);
+
+    // Enable flavours
+    $name = 'theme_lernstar/devmode';
+    $title = get_string('devmode', 'theme_lernstar');
+    $description = get_string('devmodedesc', 'theme_lernstar');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1, true, false);
+    $settings->add($setting);
     
     // Choose your color
     $name = 'theme_lernstar/flavour';
     $title = get_string('flavour', 'theme_lernstar');
     $description = get_string('flavourdesc', 'theme_lernstar');
-    $choices = array('green'=>'green','blue'=>'blue');
+    $choices = array('green'=>'green','blue'=>'blue', 'lightblue' => 'lightblue', 'orange' => 'orange');
     $setting = new admin_setting_configselect($name, $title, $description, 'green', $choices);
-    $settings->add($setting);
-    
-    // Enable Developer Mode
-    $name = 'theme_lernstar/devmode';
-    $title = get_string('devmode', 'theme_lernstar');
-    $description = get_string('devmodedesc', 'theme_lernstar');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0, true, false);
     $settings->add($setting);
     
     $name = 'theme_lernstar/youtubelink'; 
