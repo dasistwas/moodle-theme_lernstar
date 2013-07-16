@@ -54,7 +54,7 @@ function theme_lernstar_get_lesscss ($theme){
 	$less_input = '
 			@import "../../bootstrapbase/less/moodle";
 			@import "main";
-			@import "variables";
+			@import "'.$theme->settings->flavour.'";
 			@import "blocks";
 			@import "custommenu";
 			@import "mod";
