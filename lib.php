@@ -51,7 +51,14 @@ function theme_lernstar_process_css($css, $theme) {
 }
 
 function theme_lernstar_get_lesscss ($theme){
-	$less_input = '@import "main";';
+	$less_input = '
+			@import "../../bootstrapbase/less/moodle";
+			@import "main";
+			@import "variables";
+			@import "blocks";
+			@import "custommenu";
+			@import "mod";
+			';
 	$less_variables = array();
 	$import_dirs[] = $theme->dir.'/less';
 	$css_file = $theme->dir.'/style/styles.css';
