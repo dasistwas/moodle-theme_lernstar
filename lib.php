@@ -36,7 +36,7 @@ function theme_lernstar_process_css($css, $theme) {
 	}
 	// Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_lernstar_set_logo($css, $logo);
+    $css = theme_lernstar_set_logo($css, $logo, $theme->settings->flavour);
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -87,12 +87,12 @@ function theme_lernstar_insert_imageurls($css){
 	return $newcss;
 }
 
-function theme_lernstar_set_logo($css, $logo) {
+function theme_lernstar_set_logo($css, $logo, $flavour) {
 	global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('header','theme');
+        $replacement = $OUTPUT->pix_url($flavour.'/header','theme');
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
