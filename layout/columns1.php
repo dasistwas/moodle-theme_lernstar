@@ -30,7 +30,7 @@ echo $OUTPUT->doctype() ?>
 
 <div class="container-fluid container-design">
 <div id="page" class="container-fluid">
-		<header role="banner" id="page-header">
+		<header id="page-header">
 			<div class="row-fluid">
 				<div class="logo span7">
 					<a class="logo" href="<?php echo $CFG->wwwroot; ?>"

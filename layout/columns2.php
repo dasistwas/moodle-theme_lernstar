@@ -15,6 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 // Get the HTML for the settings bits.
+$left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
 $html = theme_lernstar_get_html_for_settings($OUTPUT, $PAGE);
 
 echo $OUTPUT->doctype() ?>
@@ -32,7 +33,7 @@ echo $OUTPUT->doctype() ?>
 
 <div class="container-fluid container-design">
 	<div id="page" class="container-fluid">
-		<header role="banner" id="page-header">
+		<header id="page-header">
 			<div class="row-fluid">
 				<div class="logo span7">
 					<a class="logo" href="<?php echo $CFG->wwwroot; ?>"
@@ -69,25 +70,19 @@ echo $OUTPUT->doctype() ?>
 		</header>
 	
     <div id="page-content" class="row-fluid">
-        <div id="region-bs-main-and-pre" class="span9">
-            <div class="row-fluid">
-                <section id="region-main" class="span9 pull-right">
-                    <?php
-                    echo $OUTPUT->course_content_header();
-                    echo $OUTPUT->main_content();
-                    echo $OUTPUT->course_content_footer();
-                    ?>
-                </section>
-                <?php
-                if (!right_to_left()) {
-                    echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
-                } ?>
-            </div>
-        </div>
+        <section id="region-main" class="span9<?php if ($left) { echo ' pull-right'; } ?>">
+            <?php
+            echo $OUTPUT->course_content_header();
+            echo $OUTPUT->main_content();
+            echo $OUTPUT->course_content_footer();
+            ?>
+        </section>
         <?php
-        if (right_to_left()) {
-            echo $OUTPUT->blocks('side-post', 'span3');
+        $classextra = '';
+        if ($left) {
+            $classextra = ' desktop-first-column';
         }
+        echo $OUTPUT->blocks('side-pre', 'span3'.$classextra);
         ?>
     </div>
 

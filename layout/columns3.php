@@ -13,6 +13,12 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+if (right_to_left()) {
+    $regionbsid = 'region-bs-main-and-post';
+} else {
+    $regionbsid = 'region-bs-main-and-pre';
+}
 $html = theme_lernstar_get_html_for_settings($OUTPUT, $PAGE);
 
 echo $OUTPUT->doctype() ?>
@@ -29,7 +35,7 @@ echo $OUTPUT->doctype() ?>
 	<?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div class="container-fluid container-design">
 	<div id="page" class="container-fluid">
-		<header role="banner" id="page-header">
+		<header id="page-header">
 			<div class="row-fluid">
 				<div class="logo span7">
 					<a class="logo" href="<?php echo $CFG->wwwroot; ?>"
@@ -65,21 +71,21 @@ echo $OUTPUT->doctype() ?>
 			</div>
 		</header>
 
-		<div id="page-content" class="row-fluid">
-			<div id="region-bs-main-and-pre" class="span9">
-				<div class="row-fluid">
-					<section id="region-main" class="span8 pull-right">
-						<?php
-						echo $OUTPUT->course_content_header();
-						echo $OUTPUT->main_content();
-						echo $OUTPUT->course_content_footer();
-						?>
-					</section>
-					<?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
-				</div>
-			</div>
-			<?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
-		</div>
+    <div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span9">
+            <div class="row-fluid">
+                <section id="region-main" class="span8 pull-right">
+                    <?php
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    echo $OUTPUT->course_content_footer();
+                    ?>
+                </section>
+                <?php echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column'); ?>
+            </div>
+        </div>
+        <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
+    </div>
 
 		<footer id="page-footer">
 		<?php echo $html->footnote; ?>
