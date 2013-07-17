@@ -30,8 +30,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<div id="page" class="container-fluid">
-
+<div class="container-fluid container-design">
 	<div id="page" class="container-fluid">
 		<header role="banner" id="page-header">
 			<div class="row-fluid">
@@ -104,6 +103,7 @@ echo $OUTPUT->doctype() ?>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
+</div>
 </div>
 </body>
 </html>

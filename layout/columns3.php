@@ -27,7 +27,7 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 	<?php echo $OUTPUT->standard_top_of_body_html() ?>
-
+<div class="container-fluid container-design">
 	<div id="page" class="container-fluid">
 		<header role="banner" id="page-header">
 			<div class="row-fluid">
@@ -95,6 +95,7 @@ echo $OUTPUT->doctype() ?>
 			?>
 		</footer>
 		<?php echo $OUTPUT->standard_end_of_body_html() ?>
+	</div>
 	</div>
 </body>
 </html>
