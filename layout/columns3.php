@@ -73,7 +73,7 @@ echo $OUTPUT->doctype() ?>
 <?php
 if (exists_auth_plugin('googleoauth2')) {
     $loginpage = ((string)$this->page->url === get_login_url());
-    if (!empty($loginpage)) {
+    if (!empty($loginpage) || $PAGE->course->id == 1) {
         require_once($CFG->dirroot . '/auth/googleoauth2/lib.php');
         auth_googleoauth2_display_buttons();
     }
