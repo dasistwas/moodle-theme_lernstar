@@ -65,7 +65,15 @@ echo $OUTPUT->doctype() ?>
 				<?php echo $OUTPUT->navbar(); ?>
 			</div>
 		</header>
-	
+<?php
+if (exists_auth_plugin('googleoauth2')) {
+    $loginpage = ((string)$this->page->url === get_login_url());
+    if (!empty($loginpage)) {
+        require_once($CFG->dirroot . '/auth/googleoauth2/lib.php');
+        auth_googleoauth2_display_buttons();
+    }
+}
+?>	
     <div id="page-content">
         <div id="region-bs-main-and-pre">
             <section id="region-main">
