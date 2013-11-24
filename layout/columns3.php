@@ -70,15 +70,7 @@ echo $OUTPUT->doctype() ?>
 				<?php echo $OUTPUT->navbar(); ?>
 			</div>
 		</header>
-<?php
-if (exists_auth_plugin('googleoauth2')) {
-    $loginpage = ((string)$this->page->url === get_login_url());
-    if (!empty($loginpage) || $PAGE->course->id == 1) {
-        require_once($CFG->dirroot . '/auth/googleoauth2/lib.php');
-        auth_googleoauth2_display_buttons();
-    }
-}
-?>
+
     <div id="page-content" class="row-fluid">
         <div id="<?php echo $regionbsid ?>" class="span9">
             <div class="row-fluid">
