@@ -1,23 +1,27 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-class theme_lernstar_core_renderer extends theme_bootstrapbase_core_renderer {
+/**
+ * Essential theme with the underlying Bootstrap theme.
+ *
+ * @package    theme
+ * @subpackage lernstar
+ * @author     David Bogner
+ * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-	public function theme_lernstar_socialicons(){
-		$content = '';
-		if (!empty($this->page->theme->settings->googlepluslink)) {
-			$content .= html_writer::tag('a','<img src="'.$this->pix_url('gplus', 'theme').'" class="sicons" alt="google plus" />', array('href' => $this->page->theme->settings->googlepluslink, 'class' => 'icons', 'target' => '_blank'));
-		}
-		if (!empty($this->page->theme->settings->twitterlink)) {
-			$content .= html_writer::tag('a','<img src="'.$this->pix_url('twitter', 'theme').'" class="sicons" alt="twitter" />', array('href' => $this->page->theme->settings->twitterlink, 'class' => 'icons', 'target' => '_blank'));
-		}
-		if (!empty($this->page->theme->settings->facebooklink)) {
-
-			$content .= html_writer::tag('a','<img src="'.$this->pix_url('faceb', 'theme').'" class="sicons" alt="facebook" />', array('href' => $this->page->theme->settings->facebooklink, 'class' => 'icons', 'target' => '_blank'));
-		}
-		if (!empty($this->page->theme->settings->youtubelink)) {
-
-			$content .= html_writer::tag('a','<img src="'.$this->pix_url('youtube', 'theme').'" class="sicons" alt="youtube" />', array('href' => $this->page->theme->settings->youtubelink, 'class' => 'icons', 'target' => '_blank'));
-		}
-		return $content;
-	}
-}
+require_once('renderers/core_renderer.php');

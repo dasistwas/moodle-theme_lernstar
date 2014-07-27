@@ -30,8 +30,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2013071701;
+$plugin->version   = 2014022401;
 $plugin->requires  = 2013040500;
-$plugin->release = '1.1.2';
+$plugin->release = '1.1.3';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'theme_lernstar';

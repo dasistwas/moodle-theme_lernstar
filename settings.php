@@ -103,4 +103,16 @@ if ($ADMIN->fulltree) {
     $description = get_string('twitterlinkdesc', 'theme_lernstar');   
     $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_TEXT);    
     $settings->add($setting);
+    
+    $name = 'theme_lernstar/metakeaywords';
+    $title = get_string('metakeaywords','theme_lernstar');
+    $description = get_string('metakeaywordsdesc', 'theme_lernstar');
+    $setting = new admin_setting_configtext($name, $title, $description, 'moodle', PARAM_TEXT);
+    $settings->add($setting);
+    
+    $name = 'theme_lernstar/metadescription';
+    $title = get_string('metadescription','theme_lernstar');
+    $description = get_string('metadescriptiondesc', 'theme_lernstar');
+    $setting = new admin_setting_configtext($name, $title, $description, 'A Moodle Site', PARAM_TEXT);
+    $settings->add($setting);
 }

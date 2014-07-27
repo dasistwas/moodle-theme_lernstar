@@ -84,3 +84,8 @@ $string['facebooklinkdesc'] = 'The link should look like this: http://www.facebo
 $string['googlepluslink'] = 'Link to your google+ page (optional)';
 $string['googlepluslinkdesc'] = 'The link should look like this: https://plus.google.com/+youracount/posts';
 
+$string['metakeaywords'] = 'Comma separated keywords for search engines';
+$string['metakeaywordsdesc'] = 'Put keywords here, that describe your site. Example: learning,moodle,mathematic,';
+
+$string['metadescription'] = 'Short description of the site';
+$string['metadescriptiondesc'] = 'A single phrase, that describes your moodle site';
